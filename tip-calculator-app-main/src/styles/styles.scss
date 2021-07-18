@@ -1,0 +1,75 @@
+$Prim-Cyan:hsl(172, 67%, 45%);
+$Prim-CyanL:hsl(172, 88%, 74%);
+$Dark-Cyan:hsl(183, 100%, 15%);
+$Dark-Grayish-Cyan:hsl(186, 14%, 43%);
+$Dark-Grayish-CyanL: hsl(184, 14%, 56%);
+$Light-Grayish-Cyan:hsl(185, 41%, 84%);
+$Light-Grayish-CyanL:hsl(189, 41%, 97%);
+$shadow: hsla(0, 0%, 52%, 0.521);
+$White:hsl(0, 0%, 100%);
+
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;500;700&display=swap');
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Space Mono', monospace;
+}
+
+body{
+    background: $Light-Grayish-Cyan;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 5%;
+    align-items: center;
+    height: 100vh;
+    
+}
+
+main{
+    background: $Light-Grayish-CyanL;
+    box-shadow:  0px 0px 20px $shadow;
+    display: flex;
+    gap: 1rem;
+    padding: 2rem;
+    border-radius: 20px;
+    & section{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content:space-around;
+        align-items:flex-start;
+    }
+}
+
+.right_side{
+    padding: 1rem;
+    background:$Dark-Cyan ;
+    border-radius: 8px;
+    & .bill_d_cont{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap:6.8rem;
+        
+        width: 100%;
+        align-items: flex-start;
+    }
+    & button{
+        color:$Dark-Cyan;
+        background: $Prim-CyanL;
+        border:none;
+        outline: none;
+        font-weight: 700;
+        width: 100%;
+        border-radius: 2px;
+        cursor: pointer;
+
+    }
+    
+}

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="./src/styles/styles.css">
   <title>Frontend Mentor | Tip calculator app</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -15,30 +15,77 @@
   </style>
 </head>
 <body>
+  <header>
+    <img src="./images/logo.svg" alt="Logo here">
+  </header>
+ 
+  <main>
+    <section class="left_side">
+      <div class="bill_inp">
+        <label for="bill">
+          Bill
+        </label>
+        <input id="bill" type="text" inputmode="numeric" placeholder="Bill" aria-placeholder="Bill">
+      </div>  
+      <div class="tip_type">
+        <label>Select Tip %</label>
+        <div class="options">
+          <button>5%</button>
+          <button>10%</button>
+          <button>15%</button>
+          <button>25%</button>
+          <button>50%</button>
+          <input type="text" inputmode="numeric" placeholder="Custom " aria-placeholder="Custom amount">
+        </div>
+      </div>
+    
+      <div class="ppl_filed">
+        <label for="ppl_number">Number of People</label>
+        <input type="text" inputmode="numeric" id="ppl_number" placeholder="Please Enter Number of people" aria-placeholder="Number of people">
+      </div>  
+    </section>
 
-  Bill
-
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
-
-  Number of People
-
-  Tip Amount
-  / person
-
-  Total
-  / person
-
-  Reset
+    <section class="right_side">
+      <div class="bill_d_cont">
+        <div class="det_cont">
+          <div class="tip">
+            <label for="total_per_person">
+              <h4>Tip Amount</h4>
+              / person
+            </label>
   
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+            <div id="tip_per_person">
+              $0.00
+            </div>
+          </div>
+          
+        <div class="total">
+          <label for="total_per_person">
+            <h4>Total</h4>
+            / person
+          </label>
+
+          <div id="total_per_person">
+            $0.00
+          </div>
+        
+        </div>
+          
+        </div>
+        <button>Reset</button>
+      </div>
+    </section>
+  </main>
+  
+  
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://github.com/Amr2" target="blank">Amr Mahmoud (AAkali)</a>.
+    </div>
+  </footer>
+
+  <script src="./src/utily.js"></script>
+
 </body>
 </html>
