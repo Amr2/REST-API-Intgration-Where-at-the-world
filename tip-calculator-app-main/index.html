@@ -21,121 +21,63 @@
  
   <main>
     <section class="left_side">
-      <!-- 
-        <div class="input_cont">
-          <div class="info_filed">
-            <label>Bill</label>
-            <div id="error"  class = "error">
-              Can`t be Zero
-            </div>
+       <div class="input_cont">
+        <div id = "bill-fild" class="info_filed">
+          <label for="bill">Bill</label>
+          <div class = "error">
+            Can`t be Zero
           </div>
-          <input type="number" min=0 placeholder = "0">
-          <img src="icon here" alt = "">
         </div>
+        <input id="bill" type="number" aria-placeholder="Please enter the total amount of the Bill" placeholder = "0" min = "0">
+        <img src="./images/icon-dollar.svg" alt = "dollar icon">
+      </div>
 
-
-        ------style--------
-        *{
-          box-sizing : border-box;
-        }
-        .input_cont{
-          position : relative ;
-          display : flex;
-          flex-direction : column;
-          width  : 200px;
-          height : fit-content;
-          background :#ffffff;
-        }
-
-        input::-webkit-outer-spin-button,
-        input::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
-        input[type=number]{
-            -moz-appearance: textfield;
-        }
-        input{
-          border:none;
-          cursor :pointer;
-          padding :.3rem;
-          text-align:right;
-          background : #f3f8fb;
-          color : #003c42;
-          font-size : 24px;
-        }
-        input:hover ,
-        input:active,
-        input:focus-visible,
-        input:focus,
-        input:focus-within
-        {
-          outline : 4px auto #5dada3;
-        }
-
-        img{
-          position: absolute;
-          top: 52%;
-          left: 5%;
-          width:15px;
-          height:15px;
-        }
-
-
-        .info_filed{
-          display : flex;
-          justify-content : space-between ;
-          align-items : center ;
-          padding : 0 0;
-        }
-
-        .info_filed > label{
-          font-size : 15px;
-          color  : #757c7d ;
-        }
-
-        .info_filed > .error{
-          font-size : 14px;
-          color : #d78976;
-          display : none ;
-        }
-
-        .error_on .error{
-            display: inline-block;
-        }
-
-       -->
-      <div class="bill_inp">
-        <label for="bill">
-          Bill
-        </label>
-        <input id="bill" type="number" placeholder="Bill" aria-placeholder="Bill" value="0">
-      </div>  
       <div class="tip_type">
-        <label>Select Tip %</label>
-        <div class="options">
-          <button>5%</button>
-          <button>10%</button>
-          <button>15%</button>
-          <button>25%</button>
-          <button>50%</button>
-          <input type="number" inputmode="numeric" placeholder="Custom " aria-placeholder="Custom amount">
+          <label>Select Tip %</label>    
+          <div class="options">
+            <div class="opt">
+              <input type="radio" name="opt" id="opt1" value="5">
+              <label for="opt1">5%</label>
+            </div>
+            <div class="opt">
+              <input type="radio" name="opt" id="opt2" value="10">
+              <label for = "opt2">10%</label>
+            </div>
+            <div class="opt">
+              <input type="radio" name="opt" id="opt3" value="15">
+              <label for = "opt3">15%</label>
+            </div>
+            <div class="opt">
+              <input type="radio" name="opt" id="opt4" value="25">
+              <label for = "opt4">25%</label>
+            </div>
+            <div class="opt">
+              <input type="radio" name="opt" id="opt5" value="50">
+              <label for = "opt5">50%</label>
+            </div>
+            <input id="custom_tip" type="number" inputmode="numeric" placeholder="Custom " aria-placeholder="Custom amount">
         </div>
       </div>
-    
-      <div class="ppl_filed">
-        <label for="ppl_number">Number of People</label>
-        <input type="number" id="ppl_number" placeholder="Please Enter Number of people" aria-placeholder="Number of people" value="0">
-      </div>  
+
+      <div class="input_cont">
+        <div id = "PPlN-fild"  class="info_filed">
+          <label for="ppl_number">Number of People</label>
+          <div class = "error">
+            Can`t be Zero
+          </div>
+        </div>
+        <input id="ppl_number" type="number" aria-placeholder="Please enter the total people number" placeholder = "0" min = "0">
+        <img src="./images/icon-person.svg" alt = "person_icon">
+      </div>
     </section>
 
     <section class="right_side">
       <div class="bill_d_cont">
         <div class="det_cont">
           <div class="tip">
-            <label for="total_per_person">
+            <label for="tip_per_person">
               <h4>Tip Amount</h4>
-              / person
+              <p>/ person</p>
             </label>
   
             <div id="tip_per_person">
@@ -146,7 +88,7 @@
         <div class="total">
           <label for="total_per_person">
             <h4>Total</h4>
-            / person
+            <p>/ person</p>
           </label>
 
           <div id="total_per_person">
@@ -156,7 +98,7 @@
         </div>
           
         </div>
-        <button>Reset</button>
+        <button disabled aria-disabled="true">Reset</button>
       </div>
     </section>
   </main>

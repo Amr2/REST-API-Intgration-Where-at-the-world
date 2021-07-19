@@ -1,5 +1,5 @@
 $Prim-Cyan:hsl(172, 67%, 45%);
-$Prim-CyanL:hsl(172, 88%, 74%);
+$Prim-CyanL:hsl(173, 61%, 77%);
 $Dark-Cyan:hsl(183, 100%, 15%);
 $Dark-Grayish-Cyan:hsl(186, 14%, 43%);
 $Dark-Grayish-CyanL: hsl(184, 14%, 56%);
@@ -7,6 +7,7 @@ $Light-Grayish-Cyan:hsl(185, 41%, 84%);
 $Light-Grayish-CyanL:hsl(189, 41%, 97%);
 $shadow: hsla(0, 0%, 52%, 0.521);
 $White:hsl(0, 0%, 100%);
+$error:hsl(13, 32%, 57%);
 
 
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;500;700&display=swap');
@@ -31,24 +32,38 @@ body{
     
 }
 
+::placeholder{ /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $Dark-Grayish-Cyan;
+    opacity: .5; /* Firefox */
+  }
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: $Dark-Grayish-Cyan;
+
+  }
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: $Dark-Grayish-Cyan;
+
+  }
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
 input[type=number]{
+    caret-color: $Dark-Grayish-CyanL;
+
     -moz-appearance: textfield;
 }
 
-@mixin Inputfiled($url) {
-    
-}
+
 
 main{
-    background: $Light-Grayish-CyanL;
+    max-width: 60%;
+    background: $White;
     box-shadow:  0px 0px 20px $shadow;
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
     padding: 2rem;
     border-radius: 20px;
     & section{
@@ -59,30 +74,219 @@ main{
         align-items:flex-start;
     }
 }
+.left_side{
+    gap : 2.2rem
+}
 
 .right_side{
-    padding: 1rem;
+    padding: 3rem 2rem;
     background:$Dark-Cyan ;
-    border-radius: 8px;
+    border-radius: 1rem;
     & .bill_d_cont{
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         gap:6.8rem;
-        
         width: 100%;
         align-items: flex-start;
     }
     & button{
         color:$Dark-Cyan;
-        background: $Prim-CyanL;
+        background: $Prim-Cyan;
+        padding: .5rem;
+        text-transform: uppercase;
         border:none;
         outline: none;
         font-weight: 700;
         width: 100%;
-        border-radius: 2px;
+        border-radius: 8px;
         cursor: pointer;
+        font-size: 24px;
+        
+        // To do create diffrent states
+        // , &:focus,&:focus-visible, &:focus-within,
+        &:hover,&:active{
+            color:$Dark-Cyan;
+            background:$Prim-CyanL;
+        }
+
+        &:disabled{
+            opacity: .1;
+        }
+    }
+    & .det_cont{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        gap: 2.5rem;
+    }
+    & .tip{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        & label {
+            color:$Light-Grayish-CyanL;
+            & p{
+                color :$Dark-Grayish-CyanL;
+                font-weight: 700;
+            }
+        }
+        & div{
+            font-size: 3rem;
+            font-weight: 700;
+            color:$Prim-Cyan;
+        }
 
     }
-    
+    & .total{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        & label {
+            color:$Light-Grayish-CyanL;
+            & p{
+                color :$Dark-Grayish-CyanL;
+                font-weight: 700;
+            }
+        }
+        & div{
+            font-size: 3rem;
+            font-weight:700;
+            color:$Prim-Cyan;
+        }
+    }
+}
+
+
+
+.input_cont{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    gap: .5rem;
+    & input{
+        border: none;
+        cursor :pointer;
+        padding :.3rem .7rem;
+        text-align:right;
+        background : $Light-Grayish-CyanL;
+        color : $Dark-Cyan;
+        font-size : 24px;
+        font-weight: 700;
+        &:hover , &:focus ,&:focus-visible , &:focus-within ,&:active{
+            outline : 4px auto $Prim-Cyan;
+        }
+        // &::-webkit-input-placeholder,&::-moz-placeholder,&::placeholder{ /* Chrome, Firefox, Opera, Safari 10.1+ */
+        //     color: $Dark-Grayish-Cyan;
+        //     opacity: .4; /* Firefox */
+        //   }
+    }
+
+    & img{
+        position: absolute;
+        top: 60%;
+        left: 5%;
+    }
+
+}
+.info_filed{
+    display : flex;
+    justify-content : space-between ;
+    align-items : center ;
+    padding : 0 0;
+    & label {
+        font-size : 14px;
+        color  : $Dark-Grayish-Cyan;
+        font-weight: 700;
+    }
+    &  .error{
+        font-size : 14px;
+        color : $error;
+        font-weight: 700;
+        display : none ;
+      }
+  }
+
+.tip_type{
+    display: flex;
+    flex-direction: column;
+    gap:.5rem;
+    & label {
+        font-size : 14px;
+        color  : $Dark-Grayish-Cyan;
+        font-weight: 700;
+    }
+}
+
+.options{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap : 1rem;
+    & *{
+        width: 30%;
+        font-size : 24px;
+        font-weight: 700;
+    }
+    & div{
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    & input{
+        border: none;
+        cursor :pointer;
+        padding :.3rem .7rem;
+        text-align:right;
+        background : $Light-Grayish-CyanL;
+        color : $Dark-Cyan;
+        &:hover , &:focus ,&:focus-visible , &:focus-within ,&:active{
+            outline : 4px auto $Prim-Cyan;
+        }
+        &::-webkit-input-placeholder{
+            color: $Dark-Grayish-Cyan;
+            opacity: 1; /* Firefox */
+        }
+        &::-moz-placeholder{
+            color: $Dark-Grayish-Cyan;
+            opacity: 1; /* Firefox */
+        }
+        &::placeholder{ /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: $Dark-Grayish-Cyan;
+            opacity: 1; /* Firefox */
+        }
+    }
+    & input[type="radio"] {
+        border: none;
+        width: 0px;
+        opacity: 0;
+        outline: none;
+        position: fixed;
+        &:hover + label , &:focus+ label ,&:focus-visible + label , &:focus-within + label ,&:active + label{
+            color:$Dark-Cyan;
+            background:$Prim-CyanL ;
+        }
+        &:checked + label{
+            color:$Dark-Cyan;
+            background:$Prim-Cyan ;
+        }
+    }
+
+    & label{
+        display: inline-block;
+        font-size : 24px;
+        padding :.3rem .7rem;
+        color  : $Light-Grayish-CyanL;
+        background:$Dark-Cyan;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        cursor: pointer;
+        font-weight: 700;
+    }
 }
