@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;500;700&display=swap");
+:root {
+  --font-size:24px;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -144,7 +148,7 @@ main section {
   width: 100%;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 24px;
+  font-size: var(--font-size);
 }
 
 .right_side button:hover, .right_side button:active {
@@ -196,7 +200,7 @@ main section {
 }
 
 .right_side .tip div {
-  font-size: 3rem;
+  font-size: calc(var(--font-size)*2);
   font-weight: 700;
   color: #26c0ab;
 }
@@ -224,7 +228,7 @@ main section {
 }
 
 .right_side .total div {
-  font-size: 3rem;
+  font-size: calc(var(--font-size)*2);
   font-weight: 700;
   color: #26c0ab;
 }
@@ -252,7 +256,7 @@ main section {
   text-align: right;
   background: #f4fafa;
   color: #00494d;
-  font-size: 24px;
+  font-size: var(--font-size);
   font-weight: 700;
 }
 
@@ -321,9 +325,9 @@ main section {
   gap: 1rem;
 }
 
-.options * {
+.options div, .options input {
   width: 30%;
-  font-size: 24px;
+  font-size: var(--font-size);
   font-weight: 700;
 }
 
@@ -392,7 +396,7 @@ main section {
 
 .options label {
   display: inline-block;
-  font-size: 24px;
+  font-size: var(--font-size);
   padding: .3rem .7rem;
   color: #f4fafa;
   background: #00494d;
@@ -401,5 +405,36 @@ main section {
   text-align: center;
   cursor: pointer;
   font-weight: 700;
+}
+
+@media all and (max-width: 1050px) {
+  main {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    max-width: 100%;
+  }
+  main section {
+    width: 100% !important;
+  }
+  .bill_d_cont {
+    gap: unset !important;
+  }
+}
+
+@media all and (max-width: 639px) {
+  :root {
+    --font-size: 18px;
+  }
+  .options div, .options input {
+    width: 44% !important;
+  }
+}
+
+@media all and (max-width: 375px) {
+  :root {
+    --font-size: 12px;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
