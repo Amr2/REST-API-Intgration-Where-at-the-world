@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    background: wheat;
+    & *{
+        width: 100%;
+    }
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: white;
+    & h1{
+        font-size: 16px;
+        font-weight: 800;
+    }
+    & div{
+        display: flex;
+        align-items: center;
+        max-width: fit-content;
+        font-size: .85rem;
+        font-weight: 600;
+        gap: .35rem;
+        & ion-icon{
+            width: 1.3rem;
+        }
+    }
+}
+
+
+main{
+    display: flex;
+    padding: 2rem 1rem;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.option{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap : 2rem;
+    flex-direction: column;
+}
+
+.ser-bar{
+    display: flex;
+    align-items: center;
+    padding: .5rem 2rem;
+    gap: 1rem;
+    background: white;
+    border-radius: 5px;
+    margin-left: 5%;
+    width: 90%;
+    & ion-icon{
+        width: 1.3rem;
+        opacity: .5;
+    }
+    & input{
+        border: none;
+        outline: none;
+        padding: .5rem 0;
+    }
+}
+
+
+.filt-bar{
+    position: relative;
+    margin-left: 5%;
+    width: 50%;
+    &:active ul,
+    &:focus-within ul,
+    &:focus ul,
+    &:hover ul{
+        visibility: visible;
+        opacity: 1;
+        top: 110%;
+    }
+    & *{
+        width: 100%;
+        background: white;
+        border-radius: 5px;
+        padding: .5rem .5rem;
+    }
+    & .fil-H{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+        & span{
+            font-weight: 600;
+            font-size: .8rem;
+        }
+        & ion-icon{
+            width: 1.3rem;
+        }
+    }
+
+    & ul{
+        position: absolute;
+        list-style: none;
+        font-weight: 600;
+        font-size: .7rem;
+        visibility: hidden;
+        opacity: 0;
+        left: 0;
+        top: 100%;
+        transition: all .5s ease;
+        &:focus-within , &:hover ,&:active , &:focus{
+            visibility: visible;
+            opacity: 1;
+            top: 110%;
+        }
+
+        & li{
+            cursor: pointer;
+        }
+    }
+}
+
+
+.cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 1.5rem;
+    & .card{  
+        width: fit-content;
+        background: white;
+        border-radius: 5px;
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        flex-direction: column;
+        gap: .4rem;
+        padding-bottom: 3rem;
+        overflow: hidden;
+        & h3 {
+            padding: 0 .8rem;
+        }
+
+        & .min-detail{
+            padding: 0 .8rem;
+        }
+        img{
+            width: 250px;
+        }
+    }
+}

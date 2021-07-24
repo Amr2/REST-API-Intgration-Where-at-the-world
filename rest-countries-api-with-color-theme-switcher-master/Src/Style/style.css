@@ -1,0 +1,242 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100vw;
+  background: wheat;
+}
+
+body * {
+  width: 100%;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem;
+  background: white;
+}
+
+header h1 {
+  font-size: 16px;
+  font-weight: 800;
+}
+
+header div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  font-size: .85rem;
+  font-weight: 600;
+  gap: .35rem;
+}
+
+header div ion-icon {
+  width: 1.3rem;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 2rem 1rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2rem;
+}
+
+.option {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 2rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.ser-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: .5rem 2rem;
+  gap: 1rem;
+  background: white;
+  border-radius: 5px;
+  margin-left: 5%;
+  width: 90%;
+}
+
+.ser-bar ion-icon {
+  width: 1.3rem;
+  opacity: .5;
+}
+
+.ser-bar input {
+  border: none;
+  outline: none;
+  padding: .5rem 0;
+}
+
+.filt-bar {
+  position: relative;
+  margin-left: 5%;
+  width: 50%;
+}
+
+.filt-bar:active ul,
+.filt-bar:focus-within ul,
+.filt-bar:focus ul,
+.filt-bar:hover ul {
+  visibility: visible;
+  opacity: 1;
+  top: 110%;
+}
+
+.filt-bar * {
+  width: 100%;
+  background: white;
+  border-radius: 5px;
+  padding: .5rem .5rem;
+}
+
+.filt-bar .fil-H {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  cursor: pointer;
+}
+
+.filt-bar .fil-H span {
+  font-weight: 600;
+  font-size: .8rem;
+}
+
+.filt-bar .fil-H ion-icon {
+  width: 1.3rem;
+}
+
+.filt-bar ul {
+  position: absolute;
+  list-style: none;
+  font-weight: 600;
+  font-size: .7rem;
+  visibility: hidden;
+  opacity: 0;
+  left: 0;
+  top: 100%;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+.filt-bar ul:focus-within, .filt-bar ul:hover, .filt-bar ul:active, .filt-bar ul:focus {
+  visibility: visible;
+  opacity: 1;
+  top: 110%;
+}
+
+.filt-bar ul li {
+  cursor: pointer;
+}
+
+.cont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  gap: 1.5rem;
+}
+
+.cont .card {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background: white;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: .4rem;
+  padding-bottom: 3rem;
+  overflow: hidden;
+}
+
+.cont .card h3 {
+  padding: 0 .8rem;
+}
+
+.cont .card .min-detail {
+  padding: 0 .8rem;
+}
+
+.cont .card img {
+  width: 250px;
+}
+/*# sourceMappingURL=style.css.map */
