@@ -22,55 +22,55 @@
         </div>
     </header>
     <main>
-        <section class="option">
-            <div class="ser-bar">
-                <ion-icon name="search-outline"></ion-icon>
-                <input type="text" placeholder="Search for a country...">
-            </div>
-            <div class="filt-bar">
-                <div class="fil-H">
-                    <span aria-haspopup="true">Filter by Regain</span>   
-                    <ion-icon name="chevron-down-outline"></ion-icon>
-                </div>                        
-                <ul>
-                    <li id = "AF">Africa</li>
-                    <li id = "AC">America</li>
-                    <li id = "AS">Asia</li>
-                    <li id = "EU">Eruop</li>
-                    <li id = "OC">Oceania</li>
-                </ul>
-            </div>
-              
-        </section>
-        <section class="cont">
-            <div class="card">
-                <img src="./1920px-Flag_of_Egypt.svg.png" alt="flag-here">
-                <h3>country name</h3>
-                <div class="min-detail">
-                    <p>population: <span>9444444444</span></p>
-                    <p>Regain: <span>regain</span></p>
-                    <p>capital: <span>capital city</span></p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="./1920px-Flag_of_Egypt.svg.png" alt="flag-here">
-                <h3>country name</h3>
-                <div class="min-detail">
-                    <p>population: <span>9444444444</span></p>
-                    <p>Regain: <span>regain</span></p>
-                    <p>capital: <span>capital city</span></p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="./1920px-Flag_of_Egypt.svg.png" alt="flag-here">
-                <h3>country name</h3>
-                <div class="min-detail">
-                    <p>population: <span>9444444444</span></p>
-                    <p>Regain: <span>regain</span></p>
-                    <p>capital: <span>capital city</span></p>
+        <section class="detail-p set_hidden">
+            <button class="btn"><ion-icon name="arrow-back-outline"></ion-icon> <span> Back</span></button>
+            <div class="detail-cont">
+                <img src="./1920px-Flag_of_Egypt.svg.png" alt="">
+                <div class="D-info">
+                    <h1>Egypt</h1>
+                    <div class="info">
+                        <div class="group">
+                        </div>
+                        <div class="group">
+                        </div>
+                    </div>
+                    <div class="border-contr">
+                        <label>Border Countries:</label>
+                        <div class="count-options">
+                            <button class="btn">libya</button>
+                            <button class="btn">Sudan</button>
+                            <button class="btn">Palestine</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
+
+        <section class="main-p">
+            <section class="option">
+                <div class="ser-bar">
+                    <ion-icon name="search-outline"></ion-icon>
+                    <input type="text" placeholder="Search for a country...">
+                </div>
+                <div class="filt-bar">
+                    <div class="fil-H">
+                        <span aria-haspopup="true">Filter by Regain</span>   
+                        <ion-icon name="chevron-down-outline"></ion-icon>
+                    </div>                        
+                    <ul>
+                        <li id = "AF">Africa</li>
+                        <li id = "AC">America</li>
+                        <li id = "AS">Asia</li>
+                        <li id = "EU">Eruop</li>
+                        <li id = "OC">Oceania</li>
+                    </ul>
+                </div>
+                  
+            </section>
+            <section class="cont">
+            </section>
+        </section>
+
     </main>
     <footer>
         <div class="attribution">
@@ -79,6 +79,8 @@
         </div>
     </footer>
 
+    <script src="./Src/JS/componenet/Country_Card.component.js"></script>
+    <script src="./Src/JS/componenet/detail_cont.component.js"></script>
     <script src="./Src/JS/Utily.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
