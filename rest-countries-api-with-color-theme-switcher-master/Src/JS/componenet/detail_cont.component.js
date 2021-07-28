@@ -63,12 +63,18 @@ const D_Data_Form = async (Alpha_code , from_home)=>{
 
         c_btn.innerText = country_name.name;
         c_btn.classList.add("btn");
+        c_btn.classList.add("shadow");
         c_btn.addEventListener("click",()=>{
             D_Data_Form(B_count , false);
+            Router_obj.push({country : Alpha_code , to_home : false});
         })
 
         detail_cont.children[1].querySelector(".count-options").append(c_btn);
     });
 
-    Control_view(from_home);
+    if(from_home){
+        Control_view(from_home);
+    }
+
+    
 }

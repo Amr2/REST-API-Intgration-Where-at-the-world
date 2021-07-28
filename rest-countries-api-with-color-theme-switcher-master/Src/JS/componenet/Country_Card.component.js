@@ -1,4 +1,4 @@
-const Create_Card = (C_obj)=>{
+const Create_Card = (C_obj,all_Count)=>{
     let img , h3 ,min_detail;
 
     const card_cont = document.querySelector(".cont");
@@ -26,15 +26,36 @@ const Create_Card = (C_obj)=>{
 
     min_detail.classList.add("min-detail");
     card.classList.add("card");
+    card.classList.add("shadow");
 
     card.addEventListener("click", ()=>{
         D_Data_Form(C_obj.alpha3Code,true);
+        Router_obj.push({country : all_Count , to_home : true});
     });
 
 
     [img , h3 , min_detail].forEach( elem =>{
         card.append(elem);
     });
+    
+    card.setAttribute("reg" , Regions[C_obj.region]);
+    
     card_cont.append(card);
+
+}
+
+
+
+
+const Hidde_Card = (elem , undo)=>{
+    if(!elem.parentElement.classList.contains("set_hidden")){
+        elem.parentElement.classList.toggle("set_hidden");
+    }
+
+    if(undo){
+        if(elem.parentElement.classList.contains("set_hidden")){
+            elem.parentElement.classList.toggle("set_hidden");
+        }
+    }
 
 }

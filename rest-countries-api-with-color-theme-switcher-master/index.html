@@ -14,16 +14,16 @@
     </style>
 </head>
 <body>
-    <header>
+    <header class="shadow">
         <h1>Where in the world?</h1>
         <div class="switcher">
-            <ion-icon name="moon-outline"></ion-icon>
+            <ion-icon name="moon"></ion-icon>
             <span>Dark Mode</span>
         </div>
     </header>
     <main>
         <section class="detail-p set_hidden">
-            <button class="btn"><ion-icon name="arrow-back-outline"></ion-icon> <span> Back</span></button>
+            <button class="btn shadow"><ion-icon name="arrow-back-outline"></ion-icon> <span> Back</span></button>
             <div class="detail-cont">
                 <img src="./1920px-Flag_of_Egypt.svg.png" alt="">
                 <div class="D-info">
@@ -48,21 +48,22 @@
 
         <section class="main-p">
             <section class="option">
-                <div class="ser-bar">
+                <div class="ser-bar shadow">
                     <ion-icon name="search-outline"></ion-icon>
-                    <input type="text" placeholder="Search for a country...">
+                    <input type="search" placeholder="Search for a country...">
                 </div>
-                <div class="filt-bar">
-                    <div class="fil-H">
+                <div class="filt-bar ">
+                    <div class="fil-H shadow">
                         <span aria-haspopup="true">Filter by Regain</span>   
                         <ion-icon name="chevron-down-outline"></ion-icon>
                     </div>                        
                     <ul>
-                        <li id = "AF">Africa</li>
-                        <li id = "AC">America</li>
-                        <li id = "AS">Asia</li>
-                        <li id = "EU">Eruop</li>
-                        <li id = "OC">Oceania</li>
+                        <li id = "AF" onclick="Filter_Search_Cards({reg:this.id})">Africa</li>
+                        <li id = "AC" onclick="Filter_Search_Cards({reg:this.id})">America</li>
+                        <li id = "AS" onclick="Filter_Search_Cards({reg:this.id})">Asia</li>
+                        <li id = "EU" onclick="Filter_Search_Cards({reg:this.id})">Eruop</li>
+                        <li id = "OC" onclick="Filter_Search_Cards({reg:this.id})">Oceania</li>
+                        <li onclick="Filter_Search_Cards({undo : true})">All countries </li>
                     </ul>
                 </div>
                   
