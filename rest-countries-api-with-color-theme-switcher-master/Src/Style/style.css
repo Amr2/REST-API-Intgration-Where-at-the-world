@@ -260,6 +260,7 @@ main {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  cursor: pointer;
   background: var(--sec-color);
   border-radius: 5px;
   display: -webkit-box;
