@@ -6,19 +6,25 @@ import { fetctCountryByCode } from "@/api/fetchingMethods";
 import { createLink } from "@/helpers/index";
 
 const BorderCountryBtn: FC<{ countryCode: string }> = ({ countryCode }) => {
-  const [borderCountry, setBorderCountry] = useState(
-    "border Country PlaceHolder Text"
-  );
+  const [borderCountry, setBorderCountry] = useState(null);
   const [searchParams] = useSearchParams();
   const currentTheme = searchParams?.get("theme") ?? "light";
   const countryInfo = useMemo(async () => {
     const countryInfo = await fetctCountryByCode(countryCode);
-    setBorderCountry(countryInfo.data?.[0].name.common);
+    let name =
+      countryInfo.data?.[0]?.name?.common === "Israel"
+        ? "Palestine"
+        : countryInfo?.data?.[0].name?.common;
+    setBorderCountry(name ?? null);
   }, [countryCode]);
   return (
-    <Link to={createLink(`/country/${borderCountry}`, currentTheme)}>
-      {borderCountry}
-    </Link>
+    <>
+      {borderCountry && (
+        <Link to={createLink(`/country/${borderCountry}`, currentTheme)}>
+          {borderCountry}
+        </Link>
+      )}
+    </>
   );
 };
 

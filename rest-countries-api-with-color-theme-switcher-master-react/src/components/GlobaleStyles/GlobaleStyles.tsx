@@ -1,6 +1,6 @@
 import themes from "@/src/themes";
 import { createGlobalStyle } from "styled-components";
-const GlobaleStyles = createGlobalStyle`
+const GlobaleStyles = createGlobalStyle<{theme:any}>`
 *{
     padding: 0;
     margin: 0;

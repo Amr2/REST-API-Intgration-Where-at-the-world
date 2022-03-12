@@ -12,7 +12,7 @@ import { faLeftLong } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 // needed styles
-import Container from "@/components/shared/StyledComponents/Container";
+import { SingleDetailedCountryContainer } from "./styles";
 
 
 // needed types
@@ -50,7 +50,7 @@ const DetailedCountryComponent = () => {
   }, [countryDetailedData]);
 
   return (
-    <Container>
+    <SingleDetailedCountryContainer>
       <button onClick={() => navigate(backNavgationIndex)}>
         <FontAwesomeIcon icon={faLeftLong} /> Back
       </button>
@@ -76,7 +76,7 @@ const DetailedCountryComponent = () => {
           "languages"
         )}
       />
-    </Container>
+    </SingleDetailedCountryContainer>
   );
 };
 

@@ -3,11 +3,13 @@ import React, { FC, useMemo } from "react";
 // needed types
 import { detailedCountryDataType } from "./type";
 
+// needed styles
+import { DetailedCountryContainer } from "./styles";
+
 // needed components
 import BorderCountryBtn from "./BorderCountryBtn";
 
 const CountryInfoComponent: FC<detailedCountryDataType> = (props) => {
-
   // render Methods
   const renderBorderCountres = useMemo(() => {
     if (props.borderCountries.length <= 0) return null;
@@ -16,7 +18,7 @@ const CountryInfoComponent: FC<detailedCountryDataType> = (props) => {
         <label>Border Countries:</label>
         <div>
           {props.borderCountries.map((country: string) => (
-           <BorderCountryBtn countryCode={country}/>
+            <BorderCountryBtn countryCode={country} />
           ))}
         </div>
       </div>
@@ -24,7 +26,7 @@ const CountryInfoComponent: FC<detailedCountryDataType> = (props) => {
   }, [props?.borderCountries]);
 
   return (
-    <div>
+    <DetailedCountryContainer>
       <img src={props?.flag} alt={`${props?.name} country flag`} />
       <div>
         <h3>{props.name}</h3>
@@ -62,7 +64,7 @@ const CountryInfoComponent: FC<detailedCountryDataType> = (props) => {
         </div>
         {renderBorderCountres}
       </div>
-    </div>
+    </DetailedCountryContainer>
   );
 };
 

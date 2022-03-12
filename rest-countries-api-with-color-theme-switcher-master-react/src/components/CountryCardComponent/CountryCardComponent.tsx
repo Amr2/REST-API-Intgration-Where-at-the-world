@@ -17,14 +17,32 @@ const CountryCardComponent: FC<contryCardDataType> = ({
 }) => {
   const [searchParams] = useSearchParams();
   const currentTheme = searchParams.get("theme") ?? "light";
- 
+
   return (
     <CountryCard>
-      <Link to={createLink(`/country/${name}`, currentTheme)}>
-        <img src={flag ?? " "} alt={`Country ${name} flag`} />
+      <Link
+        to={createLink(
+          `/country/${
+            name === "State of Israel" ? "State of Palestine" : name
+          }`,
+          currentTheme
+        )}
+      >
+        <img
+          src={
+            name === "State of Israel"
+              ? "https://flagcdn.com/ps.svg"
+              : flag ?? " "
+          }
+          alt={`Country ${
+            name === "State of Israel" ? "State of Palestine" : name
+          } flag`}
+        />
       </Link>
       <div>
-        <h3>{name ?? "TextPlaceHolder"}</h3>
+        <h3>
+          {name === "State of Israel" ? "Palestine" : name ?? "TextPlaceHolder"}
+        </h3>
         <p>Population: {population ?? "TextPlaceHolder"}</p>
         <p>Region: {region ?? "TextPlaceHolder"}</p>
         <p>Capital: {capital ?? "TextPlaceHolder"}</p>
